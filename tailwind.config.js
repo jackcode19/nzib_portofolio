@@ -24,6 +24,7 @@ export default {
         hero: "url('./assets/img/welcome.png')",
       },
       screens: {
+        'sm': '640px',
         '2xl': '990px',
       },
       keyframes: {
