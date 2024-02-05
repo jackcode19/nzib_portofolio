@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+* html {
+   padding: 0;
+  margin: 0;
+  box-sizing: border-box; 
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+}
+
+.bg-main {
+  background-color: #20222e;
+}
+
+.bg-welcome {
+  background-image: url("./assets/img/welcome.png");
+}
+
+.active-tabs {
+  background-color: #ffc525;
+}
+.show-tabs {
+  display: block;
+}
+
+.hide-tabs {
+  display:  none;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .font-outline-2 {
+    -webkit-text-stroke: 5px black;
+  }
+  .font-outline-4 {
+    -webkit-text-stroke: 7px black;
+  }
+}
+
+@font-face {
+  font-family: pixelFont;
+  src: url('../src/assets/font/pixelFont.TTF');
+}
+
