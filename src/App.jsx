@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="min-h-screen bg-main bg-fixed">
       <Navbar />
-      <div className="bg-[url('./assets/img/hero.gif')] bg-center bg-no-repeat bg-cover bg-blend-multiply p-12 parallax-wrapper pb-32">
+      <div className="bg-[url('./assets/img/hero.gif')] bg-center bg-no-repeat bg-cover bg-blend-multiply pt-12 pb-32">
         <Welcome />
       </div>
       <div className="container mx-auto">
