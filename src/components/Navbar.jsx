@@ -19,7 +19,7 @@ const Navbar = () => {
           {NavbarItem?.map((menu, index) => (
             <li
               key={index}
-              className=" px-12 text-lg hover:text-primaryYellow drop-shadow-xl"
+              className="text-slate-100 px-12 text-lg hover:text-primaryYellow drop-shadow-xl"
             >
               <a href={menu?.link}>{menu?.name}</a>
             </li>
@@ -41,7 +41,7 @@ const Navbar = () => {
             {NavbarItem?.map((menu, index) => (
               <li
                 key={index}
-                className="w-full text-center px-6 text-2xl hover:text-primaryYellow my-2 p-2"
+                className="w-full text-slate-100 text-center px-6 text-2xl hover:text-primaryYellow my-2 p-2"
               >
                 <a href={menu?.link}>{menu?.name}</a>
               </li>

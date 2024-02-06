@@ -54,7 +54,7 @@ const Footer = () => {
         </a>
       </div>
       <div className="flex justify-center items-center flex-initial">
-        <p className="text-sm">
+        <p className="text-sm text-slate-100">
           © 2024 <span className="font-bold">Nzib </span> Pixel Art Artists.
         </p>
       </div>
