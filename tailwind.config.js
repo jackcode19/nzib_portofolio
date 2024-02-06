@@ -4,7 +4,10 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: {
+        DEFAULT: '0rem',
+        md: "2rem"
+      },
     },
     
     extend: {
@@ -24,8 +27,22 @@ export default {
         hero: "url('./assets/img/welcome.png')",
       },
       screens: {
+        // 'sm': '640px',
+        // '2xl': '990px',
         'sm': '640px',
-        '2xl': '990px',
+      // => @media (min-width: 640px) { ... }
+
+      'md': '768px',
+      // => @media (min-width: 768px) { ... }
+
+      'lg': '1024px',
+      // => @media (min-width: 1024px) { ... }
+
+      'xl': '1280px',
+      // => @media (min-width: 1280px) { ... }
+
+      '2xl': '1536px',
+      // => @media (min-width: 1536px) { ... }
       },
       keyframes: {
         "slide-in": {
