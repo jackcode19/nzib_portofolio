@@ -53,7 +53,7 @@ const Navbar = () => {
             />
             <div className="flex flex-wrap justify-center items-center mt-20">
               <a
-                href=""
+                href="https://www.instagram.com/nzib.art/"
                 target="_blank"
                 class="flex items-center justify-center text-slate-100 hover:text-primaryYellow mr-5"
               >
@@ -70,7 +70,7 @@ const Navbar = () => {
               </a>
 
               <a
-                href=""
+                href="https://twitter.com/nzib_h"
                 target="_blank"
                 class="flex items-center justify-center text-slate-100 hover:text-primaryYellow mr-5"
               >
@@ -108,7 +108,7 @@ const Navbar = () => {
       </div>
       <div className="hidden md:flex flex-wrap justify-center items-center">
         <a
-          href=""
+          href="https://www.instagram.com/nzib.art/"
           target="_blank"
           class="flex items-center justify-center text-slate-100 hover:text-primaryYellow mr-5"
         >
@@ -125,7 +125,7 @@ const Navbar = () => {
         </a>
 
         <a
-          href=""
+          href="https://twitter.com/nzib_h"
           target="_blank"
           class="flex items-center justify-center text-slate-100 hover:text-primaryYellow mr-5"
         >

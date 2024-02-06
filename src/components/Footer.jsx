@@ -3,7 +3,7 @@ const Footer = () => {
     <footer className="bg-dark p-4 shadow-2xl  flex flex-col items-center">
       <div className="flex flex-wrap justify-center items-center flex-initial mb-3">
         <a
-          href=""
+          href="https://www.instagram.com/nzib.art/"
           target="_blank"
           class="flex items-center justify-center text-slate-100 hover:text-primaryYellow mr-5"
         >
@@ -20,7 +20,7 @@ const Footer = () => {
         </a>
 
         <a
-          href=""
+          href="https://twitter.com/nzib_h"
           target="_blank"
           class="flex items-center justify-center text-slate-100 hover:text-primaryYellow mr-5"
         >
