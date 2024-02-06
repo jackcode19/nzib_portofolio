@@ -17,13 +17,13 @@ const About = () => {
             />
           </div>
           <div className="col-span-2">
-            <h2 className="text-center md:text-start text-white text-4xl font-pixelF sm:text-5xl mb-5 drop-shadow-md">
+            <h2 className="text-center md:text-start  text-4xl font-pixelF sm:text-5xl mb-5 drop-shadow-md">
               Hello, I'm Nzib
             </h2>
-            <h3 className="text-center md:text-start text-white font-semibold text-2xl sm:text-3xl mb-5">
+            <h3 className="text-center md:text-start  font-semibold text-2xl sm:text-3xl mb-5">
               A Pixel Artist | Illustrator
             </h3>
-            <p className="text-white font-light text-md lg:text-lg leading-relaxed md:w-10/12 ">
+            <p className="font-light text-md lg:text-lg leading-relaxed md:w-10/12 ">
               I'm a talented pixel artist hailing from Indonesia. Since 2019,
               I've been on this colorful journey in the digital art realm. Pixel
               by pixel, I bring imagination to life in beautiful and captivating
@@ -34,7 +34,7 @@ const About = () => {
             </p>
           </div>
           <div className="row-span-2 col-span-2">
-            <p className="text-white font-light text-md mb-5 lg:text-lg leading-relaxed md:w-10/12 mt-5">
+            <p className="font-light text-md mb-5 lg:text-lg leading-relaxed md:w-10/12 mt-5">
               Come join me on this adventure into a mesmerizing visual universe!
             </p>
             <a
