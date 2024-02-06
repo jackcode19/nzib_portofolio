@@ -19,7 +19,7 @@ const Navbar = () => {
           {NavbarItem?.map((menu, index) => (
             <li
               key={index}
-              className="text-white px-12 text-md hover:text-primaryYellow drop-shadow-xl"
+              className="text-white px-12 text-lg hover:text-primaryYellow drop-shadow-xl"
             >
               <a href={menu?.link}>{menu?.name}</a>
             </li>
@@ -53,7 +53,7 @@ const Navbar = () => {
             />
             <div className="flex flex-wrap justify-center items-center mt-20">
               <a
-                href="https://wa.me/6285659926061"
+                href=""
                 target="_blank"
                 class="flex items-center justify-center text-slate-100 hover:text-primaryYellow mr-5"
               >
@@ -70,7 +70,7 @@ const Navbar = () => {
               </a>
 
               <a
-                href="https://wa.me/6285659926061"
+                href=""
                 target="_blank"
                 class="flex items-center justify-center text-slate-100 hover:text-primaryYellow mr-5"
               >
@@ -87,7 +87,7 @@ const Navbar = () => {
               </a>
 
               <a
-                href="https://wa.me/6285659926061"
+                href=""
                 target="_blank"
                 class="flex items-center justify-center text-slate-100 hover:text-primaryYellow"
               >
@@ -108,7 +108,7 @@ const Navbar = () => {
       </div>
       <div className="hidden md:flex flex-wrap justify-center items-center">
         <a
-          href="https://wa.me/6285659926061"
+          href=""
           target="_blank"
           class="flex items-center justify-center text-slate-100 hover:text-primaryYellow mr-5"
         >
@@ -125,7 +125,7 @@ const Navbar = () => {
         </a>
 
         <a
-          href="https://wa.me/6285659926061"
+          href=""
           target="_blank"
           class="flex items-center justify-center text-slate-100 hover:text-primaryYellow mr-5"
         >
@@ -142,7 +142,7 @@ const Navbar = () => {
         </a>
 
         <a
-          href="https://wa.me/6285659926061"
+          href=""
           target="_blank"
           class="flex items-center justify-center text-slate-100 hover:text-primaryYellow"
         >

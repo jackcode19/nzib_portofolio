@@ -15,7 +15,7 @@ const Gallery = () => {
           Gallery
         </h2>
       </div>
-      <div className="p-4 md:py-4 mb-4">
+      <div className="md:py-4 mb-4">
         <ul className="text-white list-none flex justify-center items-center ">
           <li
             className={`bg-main font-semibold py-2 rounded-sm shadow-lg px-4 cursor-pointer text-sm mr-1 ${

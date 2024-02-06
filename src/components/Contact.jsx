@@ -29,7 +29,7 @@ const Contact = () => {
   return (
     <div id="contact" className="w-full px-4 pt-32 pb-16">
       <div className="max-w-full mx-auto text-center mb-16">
-        <h2 className="font-semibold font-pixelF text-4xl sm:text-6xl text-slate-100">
+        <h2 className="font-pixelF text-4xl sm:text-6xl text-slate-100">
           Contact Me
         </h2>
       </div>

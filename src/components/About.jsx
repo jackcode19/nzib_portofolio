@@ -2,25 +2,25 @@ import Profile from "../assets/img/profile.gif"
 const About = () => {
   return (
     <div id="about" className="w-full px-4 pt-32 pb-28">
-      <div className="max-w-full text-center mb-4">
-        <h2 className="font-semibold font-pixelF text-4xl sm:text-6xl text-slate-100">
+      <div className="max-w-full text-center mb-16">
+        <h2 className="text-4xl sm:text-6xl text-slate-100 font-pixelF">
           About
         </h2>
       </div>
-      <div className="max-w-full mt-16">
+      <div className="px-4 max-w-full mt-8">
         <div className="md:grid grid-rows-1 grid-flow-col gap-8">
           <div className="row-span-3 mb-5">
             <img
               src={Profile}
-              alt=""
+              alt="profile"
               className="w-full rounded-sm cursor-pointer"
             />
           </div>
           <div className="col-span-2">
-            <h2 className="text-center md:text-start text-white text-3xl font-pixelF sm:text-6xl mb-5 drop-shadow-md">
+            <h2 className="text-center md:text-start text-white text-4xl font-pixelF sm:text-5xl mb-5 drop-shadow-md">
               Hello, I'm Nzib
             </h2>
-            <h3 className="text-center md:text-start text-white font-semibold text-xl sm:text-3xl mb-5">
+            <h3 className="text-center md:text-start text-white font-semibold text-2xl sm:text-3xl mb-5">
               A Pixel Artist | Illustrator
             </h3>
             <p className="text-white font-light text-md lg:text-lg leading-relaxed md:w-10/12 ">
