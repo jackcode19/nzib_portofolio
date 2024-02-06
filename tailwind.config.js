@@ -15,6 +15,7 @@ export default {
         primary: '#20222e',
         primaryYellow: '#ffc525',
         primaryGreen: '#00887e',
+        dark: '#1d1f29',
       },
       fontSize: {
         '10xl': '11rem',

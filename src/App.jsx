@@ -1,5 +1,12 @@
 import { useState } from "react"
-import { Welcome, Navbar, Gallery, About, Contact } from "./components/index"
+import {
+  Welcome,
+  Navbar,
+  Gallery,
+  About,
+  Contact,
+  Footer,
+} from "./components/index"
 
 function App() {
   return (
@@ -13,6 +20,7 @@ function App() {
         <About />
         <Contact />
       </div>
+      <Footer />
     </div>
   )
 }
