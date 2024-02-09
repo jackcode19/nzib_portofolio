@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Gallery1, Gallery2, Gallery3 } from "./subcomponents/export"
+// import SimpleReactLightbox from "simple-react-lightbox"
 
 const Gallery = () => {
   const [toggle, setToggle] = useState(1)

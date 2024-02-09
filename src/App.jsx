@@ -6,6 +6,7 @@ import {
   About,
   Contact,
   Footer,
+  GalleryImage,
 } from "./components/index"
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Gallery />
         <About />
         <Contact />
+        {/* <GalleryImage /> */}
       </div>
       <Footer />
     </div>

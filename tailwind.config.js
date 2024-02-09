@@ -6,7 +6,7 @@ export default {
       center: true,
       padding: {
         DEFAULT: '0rem',
-        md: "2rem"
+        lg: "2rem"
       },
     },
     
