@@ -1,5 +1,8 @@
 import collectionImage from "../../imageCollection"
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { imagesDb } from "../../firebase/firebase.Config"
+import { ref, getDownloadURL, listAll } from "firebase/storage"
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faCircleChevronLeft,
@@ -8,9 +11,31 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 
 const Gallery3 = () => {
-  const collectionNft = collectionImage.filter((filterImage) => {
-    return filterImage.category === "nft"
-  })
+  // const collectionNft = collectionImage.filter((filterImage) => {
+  //   return filterImage.category === "nft"
+  // })
+
+  const [nft, setNft] = useState([])
+
+  useEffect(() => {
+    const fetchImages = async () => {
+      const storageRef = ref(imagesDb, "nft/")
+      const result = await listAll(storageRef)
+
+      const urlPromises = result.items.map((imageRef) =>
+        getDownloadURL(imageRef)
+      )
+
+      return Promise.all(urlPromises)
+    }
+
+    const loadImages = async () => {
+      const urls = await fetchImages()
+      setNft(urls)
+    }
+    loadImages()
+  }, [])
+
   const [slideNumber, setSlideNumber] = useState(0)
   const [openModal, setOpenModal] = useState(false)
 
@@ -27,13 +52,13 @@ const Gallery3 = () => {
   // Previous Image
   const prevSlide = () => {
     slideNumber === 0
-      ? setSlideNumber(collectionNft.length - 1)
+      ? setSlideNumber(nft.length - 1)
       : setSlideNumber(slideNumber - 1)
   }
 
   // Next Image
   const nextSlide = () => {
-    slideNumber + 1 === collectionNft.length
+    slideNumber + 1 === nft.length
       ? setSlideNumber(0)
       : setSlideNumber(slideNumber + 1)
   }
@@ -62,24 +87,23 @@ const Gallery3 = () => {
               onClick={nextSlide}
             />
             <div className="fullScreenImage">
-              <img src={collectionNft[slideNumber].imageUrl} alt="" />
+              <img src={nft[slideNumber]} alt="" />
             </div>
           </div>
         )}
-        {collectionNft &&
-          collectionNft.map((slide, index) => (
-            <div className="lg:w-1/3 xl:w-1/4 p-2">
-              <div className="flex relative">
-                <img
-                  key={index}
-                  src={slide.imageUrl}
-                  onClick={() => handleOpenModal(index)}
-                  alt=""
-                  className="inset-0 w-full h-70 opacity-75 hover:opacity-100 cursor-pointer rounded-sm object-cover object-center"
-                />
-              </div>
+        {nft.map((imageUrl, index) => (
+          <div className="lg:w-1/3 xl:w-1/4 p-2">
+            <div className="flex relative">
+              <img
+                key={index}
+                src={imageUrl}
+                onClick={() => handleOpenModal(index)}
+                alt=""
+                className="inset-0 w-full h-70 opacity-75 hover:opacity-100 cursor-pointer rounded-sm object-cover object-center"
+              />
             </div>
-          ))}
+          </div>
+        ))}
       </div>
     </div>
   )

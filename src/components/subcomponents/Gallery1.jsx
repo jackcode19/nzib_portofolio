@@ -1,6 +1,9 @@
 // import { imageScanes } from "../subcomponents/export"
-import collectionImage from "../../imageCollection"
-import { useState } from "react"
+// import collectionImage from "../../imageCollection"
+import { useState, useEffect } from "react"
+import { ref, getDownloadURL, listAll } from "firebase/storage"
+import { imagesDb } from "../../firebase/firebase.Config"
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faCircleChevronLeft,
@@ -9,9 +12,30 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 
 const Gallery1 = () => {
-  const collectionScanes = collectionImage.filter((filterImage) => {
-    return filterImage.category === "scanes"
-  })
+  // const collectionScanes = collectionImage.filter((filterImage) => {
+  //   return filterImage.category === "scanes"
+  // })
+
+  const [scanes, setScanes] = useState([])
+
+  useEffect(() => {
+    const fetchImages = async () => {
+      const storageRef = ref(imagesDb, "scanes/")
+      const result = await listAll(storageRef)
+
+      const urlPromises = result.items.map((imageRef) =>
+        getDownloadURL(imageRef)
+      )
+
+      return Promise.all(urlPromises)
+    }
+
+    const loadImages = async () => {
+      const urls = await fetchImages()
+      setScanes(urls)
+    }
+    loadImages()
+  }, [])
 
   const [slideNumber, setSlideNumber] = useState(0)
   const [openModal, setOpenModal] = useState(false)
@@ -29,13 +53,13 @@ const Gallery1 = () => {
   // Previous Image
   const prevSlide = () => {
     slideNumber === 0
-      ? setSlideNumber(collectionScanes.length - 1)
+      ? setSlideNumber(scanes.length - 1)
       : setSlideNumber(slideNumber - 1)
   }
 
   // Next Image
   const nextSlide = () => {
-    slideNumber + 1 === collectionScanes.length
+    slideNumber + 1 === scanes.length
       ? setSlideNumber(0)
       : setSlideNumber(slideNumber + 1)
   }
@@ -65,15 +89,15 @@ const Gallery1 = () => {
               onClick={nextSlide}
             />
             <div className="fullScreenImage">
-              <img src={collectionScanes[slideNumber].imageUrl} alt="" />
+              <img src={scanes[slideNumber]} alt="" />
             </div>
           </div>
         )}
-        {collectionScanes.map((slide, index) => (
+        {scanes.map((imageUrl, index) => (
           <div className="md:w-1/2 lg:w-1/3 p-2">
             <div className="flex relative">
               <img
-                src={slide.imageUrl}
+                src={imageUrl}
                 onClick={() => handleOpenModal(index)}
                 alt=""
                 className="inset-0 h-72 w-full object-cover object-center rounded-sm opacity-75 hover:opacity-100 cursor-pointer"
@@ -81,6 +105,20 @@ const Gallery1 = () => {
             </div>
           </div>
         ))}
+        {/* {files.map((imageUrl) => {
+          return (
+            <div className="md:w-1/2 lg:w-1/3 p-2">
+              <div className="flex relative">
+                <img
+                  src={imageUrl}
+                  alt=""
+                  onClick={() => handleOpenModal(index)}
+                  className="inset-0 h-72 w-full object-cover object-center rounded-sm opacity-75 hover:opacity-100 cursor-pointer"
+                />
+              </div>
+            </div>
+          )
+        })} */}
       </div>
     </div>
   )

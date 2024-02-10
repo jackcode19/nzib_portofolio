@@ -1,7 +1,7 @@
 import { imagesDb } from "../firebase/firebase.Config"
 import { dataDb } from "../firebase/firebase.Config"
 import { collection } from "firebase/firestore"
-// import { GalleryImage } from "../components/GalleryImage"
+import { GalleryImage } from "../components/index"
 
 function CollectionPage() {
   return (
@@ -63,6 +63,7 @@ function CollectionPage() {
           </div>
         </div>
       </div>
+      <GalleryImage />
     </div>
   )
 }

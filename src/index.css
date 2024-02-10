@@ -82,6 +82,7 @@ body {
   right: 40px;
 }
 
+/* Desktop */
 @media only screen and (min-width: 600px) {
   .fullScreenImage {
     width: calc(100% - 40px);
@@ -92,8 +93,8 @@ body {
   }
 
   .fullScreenImage img {
-    max-width: 70%;
-    max-height: 100%;
+    max-width: 100%;
+    height: 70%;
     pointer-events: none;
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
@@ -101,6 +102,7 @@ body {
   }
 }
 
+/* Mobile */
 @media only screen and (max-width: 600px) {
   .fullScreenImage {
     width: calc(100% - 40px);
@@ -112,7 +114,7 @@ body {
 
   .fullScreenImage img {
     max-width: 100%;
-    height: 50%;
+    max-height: 100%;
     pointer-events: none;
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */

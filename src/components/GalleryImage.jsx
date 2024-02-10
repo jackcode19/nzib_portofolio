@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { ref, getDownloadURL, listAll } from "firebase/storage"
 import { imagesDb } from "../firebase/firebase.Config"
+
 import collectionImage from "../imageCollection"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
@@ -10,18 +11,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 
 const GalleryImage = () => {
-  // const [imgUrl, setImgUrl] = useState([])
-  // useEffect(() => {
-  //   listAll(ref(imagesDb, "scanes")).then((imgs) => {
-  //     console.log(imgs)
-  //     imgs.items.forEach((val) => {
-  //       getDownloadURL(val).then((url) => {
-  //         setImgUrl((data) => [...data, url])
-  //       })
-  //     })
-  //   })
-  // }, [])
-
   const [image, setImage] = useState(
     collectionImage.filter((filterImage) => {
       return filterImage.category === "scanes"
@@ -67,6 +56,42 @@ const GalleryImage = () => {
     return filterImage.category === "scanes"
   })
 
+  // const [imgUrl, setImgUrl] = useState([])
+
+  // useEffect(() => {
+  //   listAll(ref(imagesDb, "scanes/")).then((imgs) => {
+  //     console.log(imgs)
+  //     imgs.items.forEach((val) => {
+  //       getDownloadURL(val).then((url) => {
+  //         setImgUrl((data) => [...data, url])
+  //       })
+  //     })
+  //   })
+  // }, [])
+
+  const [files, setFiles] = useState([])
+
+  useEffect(() => {
+    const fetchImages = async () => {
+      const storageRef = ref(imagesDb, "scanes/")
+      const result = await listAll(storageRef)
+
+      const urlPromises = result.items.map((imageRef) =>
+        getDownloadURL(imageRef)
+      )
+
+      return Promise.all(urlPromises)
+    }
+
+    const loadImages = async () => {
+      const urls = await fetchImages()
+      setFiles(urls)
+    }
+    loadImages()
+  }, [])
+
+  // console.log(files)
+
   return (
     <div id="gallery" className="w-full px-4 pb-28 pt-32">
       <div className="max-w-full text-center mx-auto mb-10">
@@ -106,7 +131,7 @@ const GalleryImage = () => {
           <div className="max-w-full mx-auto">
             <h1 className="text-white text-xl md:text-2xl mb-4"></h1>
             <div className="flex flex-wrap justify-center item-center">
-              {openModal && (
+              {/* {openModal && (
                 <div className="sliderWrap">
                   <FontAwesomeIcon
                     icon={faCircleXmark}
@@ -139,6 +164,20 @@ const GalleryImage = () => {
                       <img
                         key={index}
                         src={slide.imageUrl}
+                        alt=""
+                        onClick={() => handleOpenModal(index)}
+                        className="inset-0 h-72 w-full object-cover object-center rounded-sm opacity-75 hover:opacity-100 cursor-pointer"
+                      />
+                    </div>
+                  </div>
+                )
+              })} */}
+              {files.map((imageUrl) => {
+                return (
+                  <div className="md:w-1/2 lg:w-1/3 p-2">
+                    <div className="flex relative">
+                      <img
+                        src={imageUrl}
                         alt=""
                         onClick={() => handleOpenModal(index)}
                         className="inset-0 h-72 w-full object-cover object-center rounded-sm opacity-75 hover:opacity-100 cursor-pointer"
