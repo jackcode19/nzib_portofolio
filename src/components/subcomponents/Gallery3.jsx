@@ -1,4 +1,3 @@
-import collectionImage from "../../imageCollection"
 import { useState, useEffect } from "react"
 import { imagesDb } from "../../firebase/firebase.Config"
 import { ref, getDownloadURL, listAll } from "firebase/storage"

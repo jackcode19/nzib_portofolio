@@ -53,16 +53,20 @@ body {
 .sliderWrap .btnNext {
   position: fixed;
   cursor: pointer;
-  opacity: 0.6;
+  opacity: 0.7;
   color: #fff;
   z-index: 9999;
 }
 
 .btnNext:hover,
-.btnPrev:hover,
-.btnClose:hover {
+.btnPrev:hover {
   opacity: 1;
   color: #ffc525;
+}
+
+.btnClose:hover {
+  opacity: 1;
+  color: #ff2525;
 }
 
 .sliderWrap .btnClose {
@@ -104,6 +108,26 @@ body {
 
 /* Mobile */
 @media only screen and (max-width: 600px) {
+  .sliderWrap .btnNext {
+    top: 50%;
+    transform: translateY(-50%);
+    right: 40px;
+    font-size: 35px;
+  }
+
+  .sliderWrap .btnPrev {
+    top: 50%;
+    transform: translateY(-50%);
+    left: 40px;
+    font-size: 35px;
+  }
+
+  .sliderWrap .btnClose {
+    top: 150px;
+    right: 10px;
+    font-size: 35px;
+  }
+
   .fullScreenImage {
     width: calc(100% - 40px);
     height: calc(100% - 40px);

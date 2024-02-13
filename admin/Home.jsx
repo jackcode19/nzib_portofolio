@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import { dataDb } from "../src/firebase/firebase.Config"
 import Delete from "./Deleted"
 import Upload from "./components/Upload"
+import ListCollection from "./components/ListCollection"
 
 export default function CollectionPortfolio() {
   const [collectionImage, setCollectionImage] = useState([])
@@ -33,68 +34,71 @@ export default function CollectionPortfolio() {
   })
 
   return (
-    <div className="min-h-screen bg-main bg-fixed pt-32">
-      <div className="container mx-auto">
-        <div className="w-full px-4">
-          <div className="w-full lg:w-1/2 lg:mx-auto text-center mb-16">
-            <h1 className="text-white text-xl md:text-2xl mb-4">Upload</h1>
-            <Upload />
-          </div>
-          <div className="w-full mx-auto mb-16">
-            <h1 className="text-white text-xl md:text-2xl mb-4">Scanes</h1>
-            <div className="flex flex-wrap justify-center item-center text-slate-100">
-              {collectionScanes.map(({ imageUrl, category, id }) => {
-                return (
-                  <div className="md:w-1/2 lg:w-1/3 p-2">
-                    <div className="flex relative mb-2">
-                      <img
-                        src={imageUrl}
-                        alt=""
-                        className="inset-0 h-72 w-full object-cover object-center rounded-sm opacity-75 hover:opacity-100 cursor-pointer"
-                      />
-                    </div>
-                    <Delete id={id} imageUrl={imageUrl} />
-                  </div>
-                )
-              })}
+    <div className="min-h-screen bg-main bg-fixed pt-5">
+      {/* <ListCollection /> */}
+      <div className="pt-32 pb-28">
+        <div className="container mx-auto">
+          <div className="w-full px-4">
+            <div className="w-full lg:w-1/2 lg:mx-auto text-center mb-16">
+              <h1 className="text-white text-xl md:text-2xl mb-4">Upload</h1>
+              <Upload />
             </div>
-          </div>
-          <div className="w-full mx-auto mb-16">
-            <h1 className="text-white text-xl md:text-2xl mb-4">Sprites</h1>
-            <div className="flex flex-wrap justify-center item-center text-slate-100">
-              {collectionSprites.map(({ imageUrl, category, id }) => {
-                return (
-                  <div className="md:w-1/2 lg:w-1/3 p-2">
-                    <div className="flex relative mb-2">
-                      <img
-                        src={imageUrl}
-                        alt=""
-                        className="inset-0 h-72 w-full object-cover object-center rounded-sm opacity-75 hover:opacity-100 cursor-pointer"
-                      />
+            <div className="w-full mx-auto mb-16">
+              <h1 className="text-white text-xl md:text-2xl mb-4">Scanes</h1>
+              <div className="flex flex-wrap justify-center item-center text-slate-100">
+                {collectionScanes.map(({ imageUrl, category, id }) => {
+                  return (
+                    <div className="md:w-1/2 lg:w-1/3 p-2">
+                      <div className="flex relative mb-2">
+                        <img
+                          src={imageUrl}
+                          alt=""
+                          className="inset-0 h-72 w-full object-cover object-center rounded-sm opacity-75 hover:opacity-100 cursor-pointer"
+                        />
+                      </div>
+                      <Delete id={id} imageUrl={imageUrl} />
                     </div>
-                    <Delete id={id} imageUrl={imageUrl} />
-                  </div>
-                )
-              })}
+                  )
+                })}
+              </div>
             </div>
-          </div>
-          <div className="w-full mx-auto">
-            <h1 className="text-white text-xl md:text-2xl mb-4">Nft</h1>
-            <div className="flex flex-wrap justify-center item-center text-slate-100">
-              {collectionNft.map(({ imageUrl, category, id }) => {
-                return (
-                  <div className="md:w-1/2 lg:w-1/3 p-2">
-                    <div className="flex relative mb-2">
-                      <img
-                        src={imageUrl}
-                        alt=""
-                        className="inset-0 h-72 w-full object-cover object-center rounded-sm opacity-75 hover:opacity-100 cursor-pointer"
-                      />
+            <div className="w-full mx-auto mb-16">
+              <h1 className="text-white text-xl md:text-2xl mb-4">Sprites</h1>
+              <div className="flex flex-wrap justify-center item-center text-slate-100">
+                {collectionSprites.map(({ imageUrl, category, id }) => {
+                  return (
+                    <div className="md:w-1/2 lg:w-1/3 p-2">
+                      <div className="flex relative mb-2">
+                        <img
+                          src={imageUrl}
+                          alt=""
+                          className="inset-0 h-72 w-full object-cover object-center rounded-sm opacity-75 hover:opacity-100 cursor-pointer"
+                        />
+                      </div>
+                      <Delete id={id} imageUrl={imageUrl} />
                     </div>
-                    <Delete id={id} imageUrl={imageUrl} />
-                  </div>
-                )
-              })}
+                  )
+                })}
+              </div>
+            </div>
+            <div className="w-full mx-auto">
+              <h1 className="text-white text-xl md:text-2xl mb-4">Nft</h1>
+              <div className="flex flex-wrap justify-center item-center text-slate-100">
+                {collectionNft.map(({ imageUrl, category, id }) => {
+                  return (
+                    <div className="md:w-1/2 lg:w-1/3 p-2">
+                      <div className="flex relative mb-2">
+                        <img
+                          src={imageUrl}
+                          alt=""
+                          className="inset-0 h-72 w-full object-cover object-center rounded-sm opacity-75 hover:opacity-100 cursor-pointer"
+                        />
+                      </div>
+                      <Delete id={id} imageUrl={imageUrl} />
+                    </div>
+                  )
+                })}
+              </div>
             </div>
           </div>
         </div>

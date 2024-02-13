@@ -131,47 +131,6 @@ const GalleryImage = () => {
           <div className="max-w-full mx-auto">
             <h1 className="text-white text-xl md:text-2xl mb-4"></h1>
             <div className="flex flex-wrap justify-center item-center">
-              {/* {openModal && (
-                <div className="sliderWrap">
-                  <FontAwesomeIcon
-                    icon={faCircleXmark}
-                    fontSize={28}
-                    className="btnClose"
-                    onClick={handleCloseModal}
-                  />
-                  <FontAwesomeIcon
-                    icon={faCircleChevronLeft}
-                    fontSize={28}
-                    className="btnPrev"
-                    onClick={prevSlide}
-                  />
-                  <FontAwesomeIcon
-                    fontSize={28}
-                    icon={faCircleChevronRight}
-                    className="btnNext"
-                    onClick={nextSlide}
-                  />
-                  <div className="fullScreenImage">
-                    <img src={image[slideNumber].imageUrl} alt="" />
-                  </div>
-                </div>
-              )}
-              {image.map((slide, index, category) => {
-                const { imageUrl } = slide
-                return (
-                  <div className="md:w-1/2 lg:w-1/3 p-2">
-                    <div className="flex relative">
-                      <img
-                        key={index}
-                        src={slide.imageUrl}
-                        alt=""
-                        onClick={() => handleOpenModal(index)}
-                        className="inset-0 h-72 w-full object-cover object-center rounded-sm opacity-75 hover:opacity-100 cursor-pointer"
-                      />
-                    </div>
-                  </div>
-                )
-              })} */}
               {files.map((imageUrl) => {
                 return (
                   <div className="md:w-1/2 lg:w-1/3 p-2">
